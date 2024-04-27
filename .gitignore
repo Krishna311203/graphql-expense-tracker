@@ -1,0 +1,15 @@
+# This is an example.gitignore file
+
+# Ignore the.env file
+.env
+
+# Ignore any log files
+*.log
+
+# Ignore any Python bytecode files
+*.pyc
+
+# Ignore any node_modules directories
+node_modules/
+
+**/node_modules
