@@ -23,11 +23,12 @@ const LoginPage = () => {
 
 	return (
 		<div className='flex justify-center items-center h-screen'>
-			<div className='flex rounded-lg overflow-hidden z-50 bg-gray-300'>
-				<div className='w-full bg-gray-100 min-w-80 sm:min-w-96 flex items-center justify-center'>
+			<div className='flex rounded-lg overflow-hidden z-50 '>
+				<div className='w-full min-w-80 sm:min-w-96 flex items-center justify-center
+				h-full  bg-gray-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100'>
 					<div className='max-w-md w-full p-6'>
-						<h1 className='text-3xl font-semibold mb-6 text-black text-center'>Login</h1>
-						<h1 className='text-sm font-semibold mb-6 text-gray-500 text-center'>
+						<h1 className='text-3xl font-semibold mb-6 text-white text-center'>Login</h1>
+						<h1 className='text-sm font-semibold mb-6 text-white text-center'>
 							Welcome back! Log in to your account
 						</h1>
 						<form className='space-y-4' onSubmit={handleSubmit}>
@@ -50,7 +51,7 @@ const LoginPage = () => {
 							<div>
 								<button
 									type='submit'
-									className='w-full bg-black text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black  focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300
+									className='w-full bg-slate-400 text-white p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-black  focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300
 										disabled:opacity-50 disabled:cursor-not-allowed
 									'
 								>
@@ -58,10 +59,10 @@ const LoginPage = () => {
 								</button>
 							</div>
 						</form>
-						<div className='mt-4 text-sm text-gray-600 text-center'>
-							<p>
+						<div className='mt-4 text-sm text-white text-center'>
+							<p >
 								{"Don't"} have an account?{" "}
-								<Link to='/signup' className='text-black hover:underline'>
+								<Link to='/signup' className='text-white hover:underline'>
 									Sign Up
 								</Link>
 							</p>

@@ -36,7 +36,7 @@ const SignUpPage = () => {
 		<div className='h-screen flex justify-center items-center'>
 			<div className='flex rounded-lg overflow-hidden z-50  '>
 				<div className='w-full min-w-80 sm:min-w-96 flex items-center justify-center
-				h-full  bg-gray-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-5 border border-gray-100
+				h-full  bg-gray-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-0 bg-opacity-10 border border-gray-100
 				'>
 					<div className='max-w-md w-full p-6'>
 						<h1 className='text-3xl font-semibold mb-6 text-white text-center'>Sign Up</h1>
