@@ -10,7 +10,7 @@ mutation SignUp($input: SignUpInput){
 }
 `
 export const LOGIN = gql`
-mutation Login ($input:SignInInput!){
+mutation Login($input:SignInInput!){
     signIn(input: $input){
         _id
         name
