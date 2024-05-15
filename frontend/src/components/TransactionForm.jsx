@@ -3,7 +3,9 @@ import { CREATE_TRANSACTION } from "../graphql/mutations/transaction.mutation";
 import toast from "react-hot-toast";
 
 const TransactionForm = () => {
-  const [createTransaction, { loading }] = useMutation(CREATE_TRANSACTION,{refetchQueries:['getTransactions']});
+  const [createTransaction, { loading }] = useMutation(CREATE_TRANSACTION, {
+    refetchQueries: ["getTransactions", "GetTransactionStatistics"],
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const TransactionForm = () => {
       form.reset();
       toast.success("Added Transaction Successfully");
     } catch (error) {
-      toast.error("Error", error.message	);
+      toast.error("Error", error.message);
     }
     console.log("transactionData", transactionData);
   };

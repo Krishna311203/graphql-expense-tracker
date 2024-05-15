@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
-import bcrypt from 'bcryptjs'
+import Transaction from "../models/transaction.model.js";
+import bcrypt from "bcryptjs";
 const userResolver = {
   Mutation: {
     signUp: async (_, { input }, context) => {
@@ -23,7 +24,7 @@ const userResolver = {
           name,
           password: hashedPassword,
           gender,
-          profilePic: gender === "male" ? boyProfilePic : girlProfilePic,
+          profilePicture: gender === "male" ? boyProfilePic : girlProfilePic,
         });
 
         await newUser.save();
@@ -81,6 +82,17 @@ const userResolver = {
       } catch (err) {
         console.error("Error in user query:", err);
         throw new Error(err.message || "Error getting user");
+      }
+    },
+  },
+  User: {
+    transactions: async (parent) => {
+      try {
+        const transactions = await Transaction.find({ userId: parent._id });
+        return transactions;
+      } catch (error) {
+        console.log("Error in User.resolver Relationship", error);
+        throw new Error(error.message || "Internal Server Error");
       }
     },
   },
