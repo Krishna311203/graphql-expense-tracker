@@ -39,7 +39,7 @@ const HomePage = () => {
   // };
 
   const [logOut, { loading, client }] = useMutation(LOGOUT, {
-    refetchQueries: ["getAuthenticatedUser"],
+    refetchQueries: ["GetAuthenticatedUser"],
   });
 
   const { data } = useQuery(GET_TRANSACTION_STATISTICS);
@@ -59,7 +59,7 @@ const HomePage = () => {
       },
     ],
   });
-
+console.log(authUserData)
   useEffect(() => {
     if (data?.categoryStatistics) {
       const categories = data.categoryStatistics.map((stat) => stat.category);

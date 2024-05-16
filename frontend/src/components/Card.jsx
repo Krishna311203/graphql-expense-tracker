@@ -18,7 +18,7 @@ const categoryColorMap = {
   // Add more categories and corresponding color classes as needed
 };
 
-const Card = ({ transaction }) => {
+const Card = ({ transaction,authUser }) => {
   let { description, paymentType, category, amount, location, date } =
     transaction;
   description = description[0]?.toUpperCase() + description.slice(1);
@@ -27,9 +27,9 @@ const Card = ({ transaction }) => {
   const formattedDate = formatDate(date);
 
   const cardClass = categoryColorMap[category];
-  const { data:authUserData } = useQuery(GET_AUTHENTICATED_USER);
+
   const [deleteTransaction, { loading }] = useMutation(DELETE_TRANSACTION, {
-    refetchQueries: ["getTransactions","GetTransactionStatistics"],
+    refetchQueries: ["GetTransactions","GetTransactionStatistics"],
   });
 
   const handleDelete = async () => {
@@ -78,7 +78,7 @@ const Card = ({ transaction }) => {
         <div className="flex justify-between items-center">
           <p className="text-xs text-black font-bold">{formattedDate}</p>
           <img
-            src={authUserData?.authUser.profilePicture}
+            src={authUser.profilePicture}
             className="h-8 w-8 border rounded-full"
             alt=""
           />

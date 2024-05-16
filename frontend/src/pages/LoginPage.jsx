@@ -20,7 +20,7 @@ const LoginPage = () => {
   };
 
   const [login, { loading }] = useMutation(LOGIN, {
-    refetchQueries: ["getAuthenticatedUser"],
+    refetchQueries: ["GetAuthenticatedUser"],
   });
 
   const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const LoginPage = () => {
       toast.success("LoggedIn Successfully")
     } catch (error) {
       console.log("Error in login: ", error);
-      toast.error("Error: ", error.message);
+      toast.error("Error: ", error);
     }
   };
 
